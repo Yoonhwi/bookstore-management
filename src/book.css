@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "OTWelcomeRA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SDSamliphopangche_Outline";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+h2 {
+  font-family: "OTWelcomeRA";
+  font-weight: 700;
+}
+ul {
+  list-style: none;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+/*header css*/
+.header {
+  margin: auto;
+  width: 1080px;
+  height: 200px;
+  position: relative;
+}
+.headbox1 {
+  font-size: 60px;
+  line-height: 150px;
+  font-family: "SDSamliphopangche_Outline";
+  padding-left: 20px;
+}
+.headbox1 a {
+  color: black;
+  text-decoration: none;
+}
+.headbox2 {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+}
+.headbox3 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.headbox2 button,
+.headbox3 button {
+  font-family: "OTWelcomeRA";
+  font-size: 18px;
+  font-weight: 400;
+}
+.headbox2 button:hover,
+.headbox3 button:hover {
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+  text-decoration-thickness: 3px;
+  color: rgb(47, 39, 39);
+}
+.nav_items a,
+.nav_items a:visited,
+.nav_items a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav_items a:hover {
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+  text-decoration-thickness: 3px;
+  color: rgb(47, 39, 39);
+}
+
+.nav_items {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  font-family: "OTWelcomeRA";
+  font-size: 20px;
+}
+.nav_items ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 100px 0 70px;
+  align-items: center;
+  height: 46px;
+}
+/*main css*/
+.page {
+  margin: auto;
+  width: 1080px;
+  min-height: 750px;
+}
+
+/*best css*/
+
+.bestpage,
+.catalogpage {
+  margin: auto;
+  width: 1080px;
+  min-height: 750px;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+.bestpage_item,
+.catalogpage_item {
+  height: 550px;
+  width: 300px;
+}
+.bestpage_item img,
+.catalogpage_item img {
+  width: 300px;
+  height: 220px;
+  padding-bottom: 20px;
+  object-fit: scale-down;
+}
+/*catalog css*/
+.catalog_category_button {
+  font-size: 20px;
+  font-family: "OTWelcomeRA";
+  font-weight: 400;
+  width: 100px;
+  height: 50px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+}
+.catalog_category_button:hover {
+  background-color: lightgray;
+}
+
+/*footer css*/
+.footer {
+  margin: auto;
+  width: 1080px;
+  height: 150px;
+  border-top: 2px solid grey;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 40px;
+  font-family: "OTWelcomeRA";
+}
+
+/*modal css*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_body {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  padding: 40px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+
+.modalCloseBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  font-size: 20px;
+}
+.modalCloseBtn:hover {
+  cursor: pointer;
+}
+/*login modal css*/
+
+.loginmodal input {
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  padding: 0px;
+  margin-bottom: 10px;
+  border: solid 2px lightgray;
+  box-sizing: border-box;
+}
+.loginmodal_button {
+  display: flex;
+  justify-content: space-evenly;
+}
+.loginmodal_button button {
+  font-size: 20px;
+  font-family: "OTWelcomeRA";
+  font-weight: 400;
+  width: 100px;
+  height: 50px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+}
+.loginmodal_button button:hover {
+  background-color: lightgray;
+}
+/*join modal css*/
+.join_idmessage,
+.join_passwordmessage {
+  font-size: 12px;
+}
+
+.joinmodal input {
+  margin-bottom: 0;
+}
+.joinmodal button {
+  font-size: 20px;
+  font-family: "OTWelcomeRA";
+  font-weight: 400;
+  width: 100px;
+  height: 50px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+}
