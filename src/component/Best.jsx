@@ -2,7 +2,6 @@ import { useState } from "react";
 import dummy from "../db.json";
 const Best = () => {
   const word = dummy.best;
-  console.log(word);
   return (
     <div className="bestpage">
       {word.map((item, index) => (

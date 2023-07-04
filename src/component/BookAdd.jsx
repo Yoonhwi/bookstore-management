@@ -13,7 +13,6 @@ const BookAdd = () => {
   };
 
   const onClickComplete = (e) => {
-    console.log(select);
     e.preventDefault();
     fetch("http://localhost:3001/books", {
       method: "POST",
@@ -27,10 +26,7 @@ const BookAdd = () => {
         bookmaker: maker,
         bookcontent: content,
       }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
+    });
   };
   return (
     <div>

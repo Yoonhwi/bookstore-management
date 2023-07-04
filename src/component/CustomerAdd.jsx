@@ -9,9 +9,6 @@ const CustomerAdd = (id, password) => {
       id: newCustomer.id,
       password: newCustomer.password,
     }),
-  })
-    .then((res) => res.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+  });
 };
 export default CustomerAdd;
