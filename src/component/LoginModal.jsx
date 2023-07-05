@@ -2,7 +2,7 @@ import JoinModal from "./JoinModal";
 import Divider from "./Divider";
 import { useState, useEffect } from "react";
 import dummy from "../db.json";
-const LoginModal = () => {
+const LoginModal = (closeModal) => {
   const [loginCheck, setLoginCheck] = useState(true);
   const [inputId, setInputId] = useState("");
   const [inputPassword, setInputPassword] = useState("");
@@ -48,6 +48,7 @@ const LoginModal = () => {
           }),
         });
       }
+      closeModal();
     } else {
       alert("아이디 비밀번호가 일치하지않습니다!");
     }

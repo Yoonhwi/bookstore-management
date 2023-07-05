@@ -80,17 +80,17 @@ const Header = () => {
       <Modal
         modalopen={modalopen}
         closeModal={closeModal}
-        content={<LoginModal />}
+        content={LoginModal(closeModal)}
       />
       <Modal
         modalopen={bookAddOpen}
         closeModal={closeModal}
-        content={<BookAdd />}
+        content={BookAdd()}
       />
       <Modal
         modalopen={joinopen}
         closeModal={closeModal}
-        content={<JoinModal />}
+        content={JoinModal(closeModal)}
       />
       <nav>
         <div className="nav_items">
@@ -105,10 +105,10 @@ const Header = () => {
               <Link to="/Catalog">장바구니</Link>
             </li>
             <li>
-              <Link to="/Catalog">장바구니</Link>
+              <Link to="/Catalog">구매하기</Link>
             </li>
             <li>
-              <Link to="/Catalog">장바구니</Link>
+              <Link to="/Catalog">게시판</Link>
             </li>
           </ul>
         </div>

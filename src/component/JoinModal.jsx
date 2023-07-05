@@ -2,7 +2,7 @@ import Divider from "./Divider";
 import { useState } from "react";
 import CustomerAdd from "./CustomerAdd";
 import Confirm from "./Confirm";
-const JoinModal = () => {
+const JoinModal = (closeModal) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [idMessage, setIdMessage] = useState(
@@ -57,6 +57,7 @@ const JoinModal = () => {
     if (isPassword & isPasswordRe & isId) {
       CustomerAdd(id, password);
       alert("회원가입이 완료되었습니다.");
+      closeModal();
     } else {
       alert("정상적으로 입력하세요!");
     }
