@@ -2,6 +2,7 @@ import dummy from "../db.json";
 import { useState, useEffect } from "react";
 import MovePage from "./MovePage";
 import Pagination from "./Pagination";
+
 const Catalog = () => {
   const category = dummy.category;
   const allbooks = dummy.books;
@@ -49,7 +50,8 @@ const Catalog = () => {
           />
         ))}
       </div>
-      {Pagination(CurrentPosts(categoryInBook))}
+      {/* {Pagination(CurrentPosts(categoryInBook))} */}
+      <Pagination post={CurrentPosts(categoryInBook)} />
       <MovePage
         postsPerPage={postsPerPage}
         totalPosts={obj[select]}

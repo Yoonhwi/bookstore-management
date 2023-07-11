@@ -5,7 +5,7 @@ import Best from "./component/Best";
 import Catalog from "./component/Catalog";
 import Footer from "./component/Footer";
 import Header from "./component/Header";
-
+import ShoppingList from "./component/ShoppingList";
 function App() {
   return (
     <div>
@@ -15,6 +15,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Best />} />
             <Route exact path="/Catalog" element={<Catalog />} />
+            <Route exact path="/ShoppingList" element={<ShoppingList />} />
           </Routes>
           <Footer />
         </div>

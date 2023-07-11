@@ -8,6 +8,7 @@ const BookAdd = () => {
   const [img, setImg] = useState("");
   const [content, setContent] = useState("");
   const [bookName, setBookName] = useState("");
+  const [cost, setCost] = useState(0);
   const selectCategory = (e) => {
     setSelect(e.target.value);
   };
@@ -20,11 +21,13 @@ const BookAdd = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        id: `${maker}의 ${bookName}`,
         category: select,
         bookimg: img,
         bookname: bookName,
         bookmaker: maker,
         bookcontent: content,
+        cost: Number(cost),
       }),
     });
   };
@@ -56,6 +59,10 @@ const BookAdd = () => {
         <input
           onChange={(e) => setContent(e.target.value)}
           placeholder="내용을 입력하세요"
+        />
+        <input
+          onChange={(e) => setCost(e.target.value)}
+          placeholder="가격을 입력하세요"
         />
         <div>
           <button onClick={onClickComplete}>제출</button>

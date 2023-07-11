@@ -7,7 +7,7 @@ const Modal = ({ modalopen, closeModal, content }) => {
             <button className="modalCloseBtn" onClick={closeModal}>
               ✖
             </button>
-            <div className="loginmodal">{content}</div>
+            <div className="modal_content">{content}</div>
           </div>
         </div>
       )}

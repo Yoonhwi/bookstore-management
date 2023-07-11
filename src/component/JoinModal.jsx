@@ -1,6 +1,6 @@
 import Divider from "./Divider";
 import { useState } from "react";
-import CustomerAdd from "./CustomerAdd";
+import CustomerAdd from "../utilities/api/customAdd";
 import Confirm from "./Confirm";
 const JoinModal = (closeModal) => {
   const [id, setId] = useState("");
@@ -55,8 +55,13 @@ const JoinModal = (closeModal) => {
   const onClickButtonJoin = (e) => {
     e.preventDefault();
     if (isPassword & isPasswordRe & isId) {
-      CustomerAdd(id, password);
-      alert("회원가입이 완료되었습니다.");
+      CustomerAdd(id, password)
+        .then(() => {
+          alert("회원가입이 완료되었습니다.");
+        })
+        .catch(() => {
+          alert("회원가입이 실패하였습니다.");
+        });
       closeModal();
     } else {
       alert("정상적으로 입력하세요!");

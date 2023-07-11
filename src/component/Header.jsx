@@ -102,10 +102,10 @@ const Header = () => {
               <Link to="/Catalog">도서목록</Link>
             </li>
             <li>
-              <Link to="/Catalog">장바구니</Link>
+              <Link to="/ShoppingList">장바구니</Link>
             </li>
             <li>
-              <Link to="/Catalog">구매하기</Link>
+              <Link to="/BuyPage">구매목록</Link>
             </li>
             <li>
               <Link to="/Catalog">게시판</Link>

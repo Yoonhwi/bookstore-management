@@ -1,6 +1,6 @@
 const CustomerAdd = (id, password) => {
   const newCustomer = { id, password };
-  fetch("http://localhost:3001/customer", {
+  return fetch("http://localhost:3001/customer", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,4 +11,5 @@ const CustomerAdd = (id, password) => {
     }),
   });
 };
+
 export default CustomerAdd;

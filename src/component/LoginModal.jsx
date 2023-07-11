@@ -60,7 +60,7 @@ const LoginModal = (closeModal) => {
   ////그후 dummy.customer에 존재하는지 확인 존재하면 완료 아니면 오류알람
   const loginModalLogin = () => {
     return (
-      <div>
+      <div className="loginmodal">
         <h2>로그인</h2>
         <Divider />
         <form>
