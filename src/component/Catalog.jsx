@@ -24,7 +24,6 @@ const Catalog = () => {
       (allbooks.filter((word) => word.category === item).length + 3) / 3
     );
   });
-
   const CurrentPosts = (post) => {
     if (post != undefined) {
       let currentPosts = 0;
@@ -54,7 +53,7 @@ const Catalog = () => {
       <Pagination post={CurrentPosts(categoryInBook)} />
       <MovePage
         postsPerPage={postsPerPage}
-        totalPosts={obj[select]}
+        totalPosts={categoryInBook.length}
         paginate={setCurrentPage}
       />
     </div>

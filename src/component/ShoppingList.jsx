@@ -109,9 +109,6 @@ const ShoppingList = () => {
       <table className="cart">
         <thead>
           <tr>
-            <td>
-              <input type="checkbox" />
-            </td>
             <td />
             <td />
             <td>가격</td>
@@ -126,16 +123,13 @@ const ShoppingList = () => {
             return (
               <tr key={index}>
                 <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
                   <img src={item.img} alt="" className="cart_listimg" />
                 </td>
                 <td>{item.bookname}</td>
                 <td>{item.cost}</td>
-                <td>
+                <td className="cart_amountbutton">
                   <button onClick={handleClickMinus}>-</button>
-                  {item.buyNum}
+                  <span>{item.buyNum}</span>
                   <button onClick={handleClickPlus}>+</button>
                 </td>
                 <td>{item.result}</td>

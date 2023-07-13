@@ -15,7 +15,7 @@ const Header = () => {
     if (user.state !== "null") {
       return (
         <>
-          <div>
+          <div className="idbox">
             {user.userid}님 <button onClick={onClickLogout}>로그아웃</button>
           </div>
         </>

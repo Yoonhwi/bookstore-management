@@ -12,6 +12,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 h2 {
   font-family: "OTWelcomeRA";
   font-weight: 700;
@@ -96,11 +103,14 @@ button {
   align-items: center;
   height: 46px;
 }
+.idbox {
+  font-family: "RIDIBatang";
+}
 /*main css*/
 .page {
   margin: auto;
   width: 1080px;
-  min-height: 750px;
+  min-height: 800px;
 }
 
 /*best css*/
@@ -239,10 +249,20 @@ button {
   border: solid 2px lightgray;
   border-radius: 10px;
 }
+/*pagination*/
+.movepage-item {
+  float: left;
+  margin-right: 10px;
+}
+.movepage-link:hover {
+  cursor: pointer;
+}
 
 /* shoppinglist*/
 .cart {
   width: 1080px;
+  text-align: center;
+  font-size: 18px;
 }
 .cart thead {
   height: 100px;
@@ -261,7 +281,10 @@ button {
   border-radius: 10px;
   border: solid 2px lightgray;
   padding: 20px;
+  font-family: "OTWelcomeRA";
+  font-size: 20px;
 }
+
 .shopping_complete {
   height: 100px;
   text-align: center;
@@ -270,4 +293,25 @@ button {
 }
 .shoppinglist_cart {
   height: 160px;
+}
+.cart td {
+  font-family: "RIDIBatang";
+}
+
+.cart td button {
+  background-color: #0a0a23;
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+}
+.cart_amountbutton {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  height: 159px;
+  align-content: center;
+  justify-content: space-between;
 }
