@@ -249,13 +249,36 @@ button {
   border: solid 2px lightgray;
   border-radius: 10px;
 }
+
 /*pagination*/
 .movepage-item {
-  float: left;
   margin-right: 10px;
 }
 .movepage-link:hover {
   cursor: pointer;
+}
+.pagination {
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  list-style-type: none;
+}
+.pagination_item {
+  border-radius: 6px;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 1px;
+  &.active {
+    background-color: bisque;
+    font-weight: 600;
+  }
+}
+.pagination_item:hover {
+  background-color: lightgray;
 }
 
 /* shoppinglist*/

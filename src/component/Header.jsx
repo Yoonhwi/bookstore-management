@@ -1,10 +1,11 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import Modal from "./Modal";
-import LoginModal from "./LoginModal";
-import JoinModal from "./JoinModal";
-import BookAdd from "./BookAdd";
+import { Pages } from "../constants";
 import dummy from "../db.json";
+import BookAdd from "./BookAdd";
+import JoinModal from "./JoinModal";
+import LoginModal from "./LoginModal";
+import Modal from "./Modal";
 
 const Header = () => {
   const [modalopen, setModalopen] = useState(false);
@@ -69,7 +70,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="headbox1">
-        <Link to="/">Book Store</Link>
+        <Link to={Pages.ROOT}>Book Store</Link>
       </div>
       <div className="headbox2">{onLogin()}</div>
       {user.state === "admin" && (
@@ -96,19 +97,19 @@ const Header = () => {
         <div className="nav_items">
           <ul>
             <li>
-              <Link to="/">BEST!</Link>
+              <Link to={Pages.ROOT}>BEST!</Link>
             </li>
             <li>
-              <Link to="/Catalog">도서목록</Link>
+              <Link to={Pages.CATALOG}>도서목록</Link>
             </li>
             <li>
-              <Link to="/ShoppingList">장바구니</Link>
+              <Link to={Pages.SHOPPING_LIST}>장바구니</Link>
             </li>
             <li>
-              <Link to="/BuyPage">구매목록</Link>
+              <Link to={Pages.BUY_LIST}>구매목록</Link>
             </li>
             <li>
-              <Link to="/Catalog">게시판</Link>
+              <Link to={Pages.CATALOG}>게시판</Link>
             </li>
           </ul>
         </div>

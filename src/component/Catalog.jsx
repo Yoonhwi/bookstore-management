@@ -33,6 +33,7 @@ const Catalog = () => {
   };
 
   useEffect(() => {
+    setCurrentPage(1);
     setCategoryInBook(allbooks.filter((data) => data.category === select));
   }, [select]);
 
@@ -55,6 +56,7 @@ const Catalog = () => {
         postsPerPage={postsPerPage}
         totalPosts={categoryInBook.length}
         paginate={setCurrentPage}
+        current={currentPage}
       />
     </div>
   );

@@ -74,6 +74,17 @@ const ShoppingList = () => {
       });
     }
   };
+  const DeleteList = () => {
+    const deleteList = list.map((item) => {
+      fetch(`http://localhost:3001/list/${item.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    });
+    Promise.all(deleteList);
+  };
   const onClickBuy = () => {
     list.map((item) => {
       fetch(`http://localhost:3001/buy`, {
@@ -92,6 +103,7 @@ const ShoppingList = () => {
         }),
       });
     });
+    DeleteList();
   };
   return (
     <div className="page">
