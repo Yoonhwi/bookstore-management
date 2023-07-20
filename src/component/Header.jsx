@@ -108,9 +108,6 @@ const Header = () => {
             <li>
               <Link to={Pages.BUY_LIST}>구매목록</Link>
             </li>
-            <li>
-              <Link to={Pages.CATALOG}>게시판</Link>
-            </li>
           </ul>
         </div>
       </nav>

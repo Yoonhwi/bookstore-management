@@ -137,7 +137,15 @@ button {
   padding-bottom: 20px;
   object-fit: scale-down;
 }
+.bestpage_item div,
+.catalogpage_item div {
+  margin-top: 10px;
+  font-family: "RIDIBatang";
+}
 /*catalog css*/
+.catalog_category {
+  margin-top: 3px;
+}
 .catalog_category_button {
   font-size: 20px;
   font-family: "OTWelcomeRA";
@@ -249,7 +257,48 @@ button {
   border: solid 2px lightgray;
   border-radius: 10px;
 }
-
+/*buybook modal*/
+.buybookmodal div {
+  text-align: left;
+  font-size: 20px;
+  font-family: "OTWelcomeRA";
+  margin-top: 10px;
+}
+.buybookmodal_img {
+  width: 150px;
+  height: 220px;
+  margin-bottom: 20px;
+}
+.buybookmodal_num {
+  display: flex;
+  justify-content: space-evenly;
+}
+.buybookmodal_numbutton {
+  border: solid 2px lightgray;
+  border-radius: 10px;
+  font-family: "OTWelcomeRA";
+  font-size: 20px;
+  width: 48%;
+  height: 50px;
+  line-height: 50px;
+}
+.buybookmodal_numbutton:hover {
+  color: white;
+  background-color: gray;
+}
+.buybookmodal_addbutton {
+  border-radius: 10px;
+  font-family: "OTWelcomeRA";
+  font-size: 20px;
+  height: 130px;
+  line-height: 130px;
+  width: 100%;
+  border: solid 2px lightgray;
+}
+.buybookmodal_addbutton:hover {
+  color: white;
+  background-color: gray;
+}
 /*pagination*/
 .movepage-item {
   margin-right: 10px;
@@ -307,12 +356,24 @@ button {
   font-family: "OTWelcomeRA";
   font-size: 20px;
 }
-
+.shopping_total {
+  text-align: left;
+}
 .shopping_complete {
+  margin-top: 10px;
   height: 100px;
+  width: 100%;
   text-align: center;
   vertical-align: middle;
   line-height: 100px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+  font-family: "OTWelcomeRA";
+  font-size: 20px;
+}
+.shopping_complete:hover {
+  color: white;
+  background-color: gray;
 }
 .shoppinglist_cart {
   height: 160px;
@@ -337,4 +398,18 @@ button {
   height: 159px;
   align-content: center;
   justify-content: space-between;
+}
+/*buylist*/
+.buylistpage {
+  margin: auto;
+  width: 1080px;
+  min-height: 800px;
+  font-family: "RIDIBatang";
+}
+.buylist_table {
+  margin: 20px 0 20px 0;
+}
+.buylist_thead {
+  font-weight: 800;
+  text-align: center;
 }

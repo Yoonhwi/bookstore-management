@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
-import dummy from "../db.json";
+
 const ShoppingList = () => {
-  const user = dummy.user[0].userid;
+  const [user, setUser] = useState("test112");
   const [list, setList] = useState([]);
   const [totalBook, setTotalBook] = useState(0);
   const [total, setTotal] = useState(0);
   const [currentBuy, setCurrentBuy] = useState([]);
 
+  const refetchList = () => {
+    fetch(`http://localhost:3001/customer/test112/list`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => setList(res));
+  };
+
   useEffect(() => {
-    if (user != "") {
-      fetch(`http://localhost:3001/customer/${user}/list`, {
-        method: "GET",
-      })
-        .then((res) => res.json())
-        .then((res) => setList(res));
-    }
-  }, [user]);
+    refetchList();
+  }, []);
 
   useEffect(() => {
     let total = 0;
@@ -28,8 +30,6 @@ const ShoppingList = () => {
   const handleClickPlusHandler = (item) => {
     const num = item.buyNum;
     const itemcost = item.cost;
-    console.log("user:", user);
-    console.log("num:", num);
     fetch(`http://localhost:3001/list/${item.id}`, {
       method: "PUT",
       headers: {
@@ -74,36 +74,39 @@ const ShoppingList = () => {
       });
     }
   };
-  const DeleteList = () => {
-    const deleteList = list.map((item) => {
-      fetch(`http://localhost:3001/list/${item.id}`, {
+  const deleteList = async () => {
+    for (let i = 0; i < list.length; i++) {
+      await fetch(`http://localhost:3001/list/${list[i].id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify(list[i]),
       });
-    });
-    Promise.all(deleteList);
+    }
   };
-  const onClickBuy = () => {
-    list.map((item) => {
-      fetch(`http://localhost:3001/buy`, {
+  const onClickBuy = async () => {
+    const jsons = list.map((item) => ({
+      id: `${item.bookname}${user}`,
+      bookname: item.bookname,
+      cost: item.cost,
+      result: item.result,
+      buyNum: item.buyNum,
+      total,
+      customerId: user,
+    }));
+
+    for (let i = 0; i < list.length; i++) {
+      await fetch(`http://localhost:3001/buy`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          id: `${item.bookname}${user}`,
-          bookname: item.bookname,
-          cost: item.cost,
-          result: item.result,
-          buyNum: item.buyNum,
-          total,
-          customerId: user,
-        }),
+        body: JSON.stringify(jsons[i]),
       });
-    });
-    DeleteList();
+    }
+    await deleteList();
+    await refetchList();
   };
   return (
     <div className="page">
@@ -114,9 +117,10 @@ const ShoppingList = () => {
           <div>포장비 : </div>
           <div>부가쇼핑백 : </div>
         </div>
-        <div className="shopping_complete">
-          <button onClick={() => onClickBuy()}>구매하기</button>
-        </div>
+        <div className="shopping_total">총 : {total}원</div>
+        <button className="shopping_complete" onClick={() => onClickBuy()}>
+          구매하기
+        </button>
       </div>
       <table className="cart">
         <thead>

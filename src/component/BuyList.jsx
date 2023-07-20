@@ -21,15 +21,28 @@ const BuyList = () => {
   }, [list]);
 
   return (
-    <div className="page">
+    <div className="buylistpage">
       <div>{user}님의 구매목록:</div>
-      {list.map((item, index) => {
-        return (
-          <div key={index}>
-            {item.bookname} {item.cost}원 {item.buyNum}권 총{item.result}원
-          </div>
-        );
-      })}
+      <table className="buylist_table">
+        <thead className="buylist_thead">
+          <tr>
+            <td>책이름</td>
+            <td>가격</td>
+            <td>갯수</td>
+            <td>총 금액</td>
+          </tr>
+        </thead>
+        <tbody>
+          {list.map((item, index) => {
+            return (
+              <tr key={index} style={{ textAlign: "center" }}>
+                <td>{item.bookname}</td> <td>{item.cost}원</td>
+                <td>{item.buyNum}권</td> <td>총{item.result}원</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
       <div>총 구매 금액:{total}원</div>
     </div>
   );

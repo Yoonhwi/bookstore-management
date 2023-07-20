@@ -59,15 +59,28 @@ const BuyBookModal = (props) => {
   // }, [buyNum]);
 
   return (
-    <div>
-      <img src={img} alt="" />
+    <div className="buybookmodal">
+      <img src={img} alt="" className="buybookmodal_img" />
       <div>가격:{cost}원</div>
-      <button onClick={handlePlusClick}>추가</button>
-      <button onClick={handleMinusClick}>빼기</button>
+      <div className="buybookmodal_num">
+        <button className="buybookmodal_numbutton" onClick={handlePlusClick}>
+          추가
+        </button>
+        <button className="buybookmodal_numbutton" onClick={handleMinusClick}>
+          빼기
+        </button>
+      </div>
       <div>
         {buyNum}권 총가격 : {buyNum * cost}원
       </div>
-      <button onClick={() => onClickAddList()}>장바구니에 추가!</button>
+      <div>
+        <button
+          className="buybookmodal_addbutton"
+          onClick={() => onClickAddList()}
+        >
+          장바구니에 추가!
+        </button>
+      </div>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const MovePage = ({ postsPerPage, totalPosts, paginate, current }) => {
     if (pageNumbers.length / 5 > checkPage) {
       setCutPage((prev) => prev + cutnum);
       setCheckPage((prev) => prev + 1);
-      paginate((Math.floor(current / cutnum) + 1) * cutnum + 1);
+      paginate(Math.floor(current / cutnum + 0.9) * cutnum + 1);
     } else {
       alert("최대페이지");
     }
